@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-// Konfigurasi Firebase Anda (Sudah sesuai dengan gambar Anda)
+// Konfigurasi Firebase Anda
 const firebaseConfig = {
   apiKey: "AIzaSyB--TePuTJhqq6LwTBU3AC2NtibcdcT4vI",
   authDomain: "seni-senuk.firebaseapp.com",
@@ -31,7 +31,7 @@ async function muatGaleri() {
 
             galeri.innerHTML += `
                 <div class="kartu-karya">
-                    <img src="${karya.gambar}" alt="${karya.judul}">
+                    <img src="${karya.gambar}" alt="${karya.judul}" style="width:100%; height:200px; object-fit:cover;">
                     <h3>${karya.judul}</h3>
                     <p class="harga">Rp ${hargaFormat}</p>
                     <button onclick="alert('Fitur pembayaran sedang dalam pengembangan!')">Beli Karya Ini</button>
@@ -50,20 +50,22 @@ if(formUpload) {
     formUpload.addEventListener('submit', async function(event) {
         event.preventDefault(); 
         
+        // Mengambil data dari input di index.html
+        const linkGambar = document.getElementById('linkGambar').value;
         const judulInput = document.getElementById('judulKarya').value;
         const hargaInput = document.getElementById('hargaKarya').value;
-        const gambarAcak = "https://picsum.photos/300/200?random=" + Math.floor(Math.random() * 1000);
 
         try {
+            // Mengirim data ke Firebase menggunakan link gambar dari user
             await addDoc(collection(db, "karya_seni"), {
                 judul: judulInput,
                 harga: hargaInput,
-                gambar: gambarAcak
+                gambar: linkGambar 
             });
             
             alert(`✅ Keren! Karya "${judulInput}" berhasil disimpan ke Database online.`);
             formUpload.reset(); 
-            muatGaleri(); // Refresh galeri otomatis
+            muatGaleri(); // Refresh galeri otomatis agar gambar langsung muncul
             
         } catch (error) {
             alert("❌ Gagal menyimpan data ke Firebase.");
@@ -72,5 +74,5 @@ if(formUpload) {
     });
 }
 
-// Tampilkan galeri saat web dibuka
+// Tampilkan galeri saat web dibuka pertama kali
 muatGaleri();

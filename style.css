@@ -1,127 +1,102 @@
-/* Reset Dasar */
+/* Reset Dasar (Tetap sama) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Efek scroll halus */
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #f4f6f8;
     color: #333;
 }
 
-/* Navigasi */
+/* Navigasi & Hero (Tetap sama) */
 header {
-    background-color: #2c3e50;
+    background-color: #1a252f;
     color: white;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+.logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a { color: white; text-decoration: none; transition: color 0.3s; }
+nav a:hover { color: #e67e22; }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #f39c12;
-}
-
-/* Bagian Hero */
 .hero {
     text-align: center;
     padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1200/400?grayscale') center/cover;
+    color: white;
+}
+.hero h1 { font-size: 40px; margin-bottom: 15px; }
+
+/* Deskripsi Profesional */
+.deskripsi-web {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #555;
+}
+.deskripsi-web h2 { color: #2c3e50; margin-bottom: 20px; font-size: 32px; }
+
+/* Galeri (Tetap sama) */
+.koleksi { padding: 50px; text-align: center; }
+.koleksi h2 { margin-bottom: 30px; font-size: 32px; color: #2c3e50; }
+.grid-karya { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.kartu-karya { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding: 20px; width: 300px; transition: transform 0.3s; }
+.kartu-karya:hover { transform: translateY(-10px); }
+.kartu-karya img { width: 100%; border-radius: 4px; margin-bottom: 15px; height: 200px; object-fit: cover; }
+.harga { color: #c0392b; font-size: 20px; font-weight: bold; margin: 10px 0; }
+
+/* Desain Form (Upload & Login) */
+.form-section {
+    padding: 60px 20px;
     background-color: #ecf0f1;
-    border-bottom: 1px solid #ddd;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-/* Bagian Koleksi/Galeri */
-.koleksi {
-    padding: 50px;
     text-align: center;
 }
-
-.koleksi h2 {
-    margin-bottom: 30px;
-    font-size: 28px;
-}
-
-.grid-karya {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.kartu-karya {
+.form-section h2 { margin-bottom: 30px; color: #2c3e50; font-size: 30px; }
+.form-container {
     background: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    width: 300px;
-    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
 }
-
-.kartu-karya:hover {
-    transform: translateY(-5px);
-}
-
-.kartu-karya img {
+.form-container label { display: block; margin-bottom: 8px; font-weight: bold; color: #34495e; }
+.form-container input {
     width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
     border-radius: 4px;
-    margin-bottom: 15px;
+    font-size: 16px;
 }
-
-.harga {
-    color: #e74c3c;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
 button {
-    background-color: #27ae60;
+    background-color: #2980b9;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
     font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
-
-button:hover {
-    background-color: #2ecc71;
-}
+button:hover { background-color: #3498db; }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: white;
-    margin-top: 40px;
-}
+footer { text-align: center; padding: 25px; background-color: #1a252f; color: white; }

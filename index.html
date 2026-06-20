@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Senuk - Galeri & Jual Beli Karya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Seni Senuk</div>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#galeri">Galeri Karya</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Selamat Datang di Seni Senuk</h1>
+        <p>Temukan dan koleksi karya seni eksklusif dari seniman berbakat.</p>
+    </section>
+
+    <section id="galeri" class="koleksi">
+        <h2>Karya Terbaru</h2>
+        <div class="grid-karya">
+            <div class="kartu-karya">
+                <img src="https://picsum.photos/300/200?random=1" alt="Lukisan Abstrak">
+                <h3>Lukisan Senja Abstrak</h3>
+                <p class="harga">Rp 500.000</p>
+                <button onclick="beliKarya('Lukisan Senja Abstrak', 500000)">Beli Sekarang</button>
+            </div>
+            <div class="kartu-karya">
+                <img src="https://picsum.photos/300/200?random=2" alt="Patung Minimalis">
+                <h3>Patung Kayu Minimalis</h3>
+                <p class="harga">Rp 850.000</p>
+                <button onclick="beliKarya('Patung Kayu Minimalis', 850000)">Beli Sekarang</button>
+            </div>
+            <div class="kartu-karya">
+                <img src="https://picsum.photos/300/200?random=3" alt="Fotografi Alam">
+                <h3>Fotografi Hutan Berkabut</h3>
+                <p class="harga">Rp 300.000</p>
+                <button onclick="beliKarya('Fotografi Hutan Berkabut', 300000)">Beli Sekarang</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Seni Senuk. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
